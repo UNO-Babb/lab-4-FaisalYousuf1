@@ -11,11 +11,6 @@ def drawSquare(myTurtle, size):
         myTurtle.forward(size)
         myTurtle.right(90)
 
-def drawPolygon(bob, sides):
-    for s in range(sides):
-        bob.forward(50)
-        bob.right(360/sides)
-
 def fillCorner(ky, corner):
     #draw big square
     drawSquare(ky, 100)
@@ -50,3 +45,13 @@ def fillCorner(ky, corner):
         ky.end_fill()
         ky.left(90)
         ky.right(90) 
+
+def main():
+    myTurtle = turtle.Turtle()
+
+    # fillCorner(myTurtle, 2) #draws a square with top left corner filled in.
+    # fillCorner(myTurtle, 3) #draws a square top right corner filled in.
+    # fillCorner(myTurtle, 4) #draws a square with bottom left corner filled in.
+    # fillCorner(myTurtle, 5) #draws a square bottom right corner filled in.
+
+main()
