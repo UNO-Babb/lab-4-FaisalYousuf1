@@ -1,0 +1,40 @@
+
+import turtle  # Needed generally, but not in CodeHS
+hideturtle() #hides the default turtle in CodeHS
+
+myTurtle = turtle.Turtle()
+
+def drawSquare(myTurtle, size):
+    for i in range(4):
+        myTurtle.forward(size)
+        myTurtle.right(90)
+
+def drawNestedSquares(myTurtle, size, numSquares):
+    increment = size // numSquares 
+    for i in range(numSquares):
+        drawSquare(myTurtle, size)
+        myTurtle.penup()           
+        myTurtle.forward(increment // 2)  
+        myTurtle.right(90)
+        myTurtle.forward(increment // 2)
+        myTurtle.left(90)
+        myTurtle.pendown()          
+        size -= increment           
+
+numSquares = 3  #choose 3 or 5
+
+if numSquares == 3:
+    myTurtle.penup()
+    myTurtle.goto(-50, 50)  
+    myTurtle.pendown()
+    drawNestedSquares(myTurtle, 100, 3)  
+elif numSquares == 5:
+    myTurtle.penup()
+    myTurtle.goto(150, 50)  
+    myTurtle.pendown()
+    drawNestedSquares(myTurtle, 100, 5) 
+
+    # squaresInSquares(myTurtle, 5) #draws 5 concentric squares
+    # squaresInSquares(myTurtle, 3) #draws 3 concentric squares
+
+main()
